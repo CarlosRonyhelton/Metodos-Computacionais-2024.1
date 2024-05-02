@@ -9,6 +9,18 @@ vetorTensao = F./A;
 limRT = max(vetorTensao);
 e = dl/lo;
 
+limElast = 0;
+
+limiteElasticidade(1) = 0;
+tamanho = size(vetorTensao);
+for cont = 2:tamanho(1)
+    limiteElasticidade(cont) = vetorTensao(cont)./e(cont);
+    if limiteElasticidade(cont) ~= vetorTensao(2)/e(2)
+        limElast = limiteElasticidade(cont-1);
+        break;
+    end
+end
+
 subplot(2,1,1)
 plot(e,vetorTensao)
 xlabel('e [m]')
