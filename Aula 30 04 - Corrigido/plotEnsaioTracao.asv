@@ -15,13 +15,13 @@ xlabel('e [m]')
 ylabel('Tensão [Pa]')
 hold on
 plot(e(vetorTensao == limRT),limRT, 'ro', 'MarkerSize', 10)
-text(e(vetorTensao == limRT),limRT-40000, 'Lim. de Resistência a Tração')
 hold off
+
+
 
 
 subplot(2,1,2)
 plot(e,vetorTensao)
-axis([0 20 0 500000])
 xlabel('e [m]')
 ylabel('Tensão [Pa]')
 hold on
