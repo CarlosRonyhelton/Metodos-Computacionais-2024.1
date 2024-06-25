@@ -11,14 +11,12 @@ for cont = 1:n
 end
 disp(carro)
 
-% Converte a struct em uma tabela
-dataTable = struct2table(carro);
-
+dataCell = 
 % Define o nome do arquivo Excel
-nomeArquivo = 'dados2.xlsx';
+filename = 'dados.xlsx';
 
-% Exporta a tabela para a planilha
-writetable(dataTable, nomeArquivo);
+% Exporta os dados para a planilha
+xlswrite(filename, dataCell);
 
 % Exibe uma mensagem de confirmação
 disp('Dados exportados com sucesso para dados.xlsx');
